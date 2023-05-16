@@ -1,6 +1,6 @@
 pipeline {
   environment{
-    USER_CREDENTIAL = credentials('github-bago-js')
+    USER_CREDENTIAL = credentials('dockerhublogin')
     DOCKER_REPOSITORY = 'https://registry.hub.docker.com'
     HELM_REPOSITORY = 'helm-internal'
     PROJECT_NAME = 'backendbagoimage'
@@ -58,10 +58,11 @@ pipeline {
       when { expression { true } }
       steps {
         container('docker') {
-          sh 'docker build -t josanbaq7/backendbagoimage .'
+          sh 'docker build -t backendbagoimage .'
           sh 'docker login $DOCKER_REPOSITORY -u $USER_CREDENTIAL_USR -p $USER_CREDENTIAL_PSW'
-          sh 'docker push juanse793/$PROJECT_NAME:$PROJECT_VERSION'
-          sh 'docker rmi juanse793/$PROJECT_NAME:$PROJECT_VERSION'
+          sh 'docker tag backendbagoimage josanbaq7/$PROJECT_NAME'
+          sh 'docker push josanbaq7/$PROJECT_NAME:$PROJECT_VERSION'
+          sh 'docker rmi josanbaq7/$PROJECT_NAME:$PROJECT_VERSION'
         }
       }
     }
