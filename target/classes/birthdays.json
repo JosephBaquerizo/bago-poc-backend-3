@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Romero Castro Juan Carlos",
+    "birthday": "Mayo-01",
+    "email": "jromero@gmail.com",
+    "phone": "0979837483",
+    "position": "Visitador a Medicos"
+  },
+  {
+    "name": "Barcos Hernandez Sebastian Hernan",
+    "birthday": "Mayo - 03",
+    "email": "hbarcos@mail.com",
+    "phone": "0966557483",
+    "position": "Visitador A Medicos"
+  },
+  {
+    "name": "Acai Intriago Janeth Bernardette",
+    "birthday": "Mayo - 05",
+    "email": "jacai@mail.com",
+    "phone": "0978926827",
+    "position": "Visitador A Medicos"
+  },
+  {
+    "name": "Lavezzi Ramos Sergio Andres",
+    "birthday": "Mayo - 08",
+    "email": "slavezzi@mail.com",
+    "phone": "0992837463",
+    "position": "Visitador A Medicos Residente"
+  },
+  {
+    "name": "Pernambucano Santos Roberto Carlos",
+    "birthday": "Mayo - 10",
+    "email": "rpernambucano@mail.com",
+    "phone": "0909182736",
+    "position": "Visitador A Medicos"
+  },
+  {
+    "name": "Roque Varas Lucia Maria",
+    "birthday": "Mayo - 15",
+    "email": "lroque@mail.com",
+    "phone": "0944444832",
+    "position": "Visitador A Medicos Residente"
+  },
+  {
+    "name": "William Sada Venus Roberta",
+    "birthday": "Mayo - 16",
+    "email": "vwilliam@mail.com",
+    "phone": "0910928732",
+    "position": "Visitador A Medicos"
+  },
+  {
+    "name": "Icaza Gonzalez Fausto Jose",
+    "birthday": "Mayo - 17",
+    "email": "ficaza@mail.com",
+    "phone": "0979837483",
+    "position": "Visitador A Medicos"
+  },
+  {
+    "name": "Sampietro Kendo Mario Luigi",
+    "birthday": "Mayo - 20",
+    "email": "msampietro@mail.com",
+    "phone": "0910982298",
+    "position": "Visitador A Medicos"
+  },
+  {
+    "name": "Benavides Otora Claudia Maria",
+    "birthday": "Mayo - 23",
+    "email": "cbenavides@mail.com",
+    "phone": "0979855566",
+    "position": "Visitador A Medicos Residente"
+  },
+  {
+    "name": "Davila Romo Guillermo Carlos",
+    "birthday": "Mayo - 25",
+    "email": "gdavila@mail.com",
+    "phone": "0911029375",
+    "position": "Visitador A Medicos"
+  },
+  {
+    "name": "Infante Bage Geoconda Josefa",
+    "birthday": "Mayo - 28",
+    "email": "ginfante@mail.com",
+    "phone": "0979837345",
+    "position": "Visitador A Medicos"
+  }
+]
