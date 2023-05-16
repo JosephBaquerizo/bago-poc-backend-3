@@ -1,7 +1,0 @@
-com/poc/bagobackend/entities/Employee.class
-com/poc/bagobackend/BagoBackendApplication.class
-com/poc/bagobackend/controllers/EmployeesController.class
-com/poc/bagobackend/entities/Country.class
-com/poc/bagobackend/entities/Representative.class
-com/poc/bagobackend/entities/EmployeeBirthday.class
-com/poc/bagobackend/services/EmployeeService.class
