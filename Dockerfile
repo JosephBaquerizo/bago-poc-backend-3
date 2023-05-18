@@ -55,7 +55,6 @@ FROM maven:3.6.3-openjdk-11
 COPY . /app
 WORKDIR /app
 RUN mvn clean install
-RUN sleep 5
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
 COPY src/main/resources/birthdays.json /app/birthdays.json
