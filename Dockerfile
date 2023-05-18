@@ -55,8 +55,8 @@ FROM maven:3.6.3-openjdk-11
 COPY . /app
 WORKDIR /app
 RUN mvn clean install
-ARG JAR_FILE=target/*.jar
+#ARG JAR_FILE=target/*.jar
 COPY src/main/resources/birthdays.json /app/birthdays.json
 COPY src/main/resources/employees.json /app/employees.json
-COPY ${JAR_FILE} app.jar
+COPY target/bago-backend-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
