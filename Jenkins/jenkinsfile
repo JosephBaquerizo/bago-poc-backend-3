@@ -8,7 +8,6 @@ pipeline {
     PROJECT_VERSION = 'latest'
     docker = tool 'docker2'
     dockerimagename = 'josanbaq7/backbagoimage:latest'
-    sonarQubeServer = 'sonar-server-backend-bago'
   }
   agent {
     kubernetes {
@@ -63,7 +62,7 @@ pipeline {
         steps {
             script {
                 def mvn = tool 'Maven';
-                withSonarQubeEnv(env.sonarQubeServer) {
+                withSonarQubeEnv('sonar-server-backend-bago') {
                     sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=bago-poc-backend -Dsonar.projectName='bago-poc-backend'"
                 }
             }
