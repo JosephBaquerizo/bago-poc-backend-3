@@ -63,7 +63,7 @@ pipeline {
             script {
                 def mvn = tool 'Maven';
                 withSonarQubeEnv('sonar-server-backend-bago') {
-                    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=bago-poc-backend -Dsonar.projectName='bago-poc-backend'"
+                    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=bago-poc-backend-jenk -Dsonar.projectName='bago-poc-backend-jenk'"
                 }
             }
         }
