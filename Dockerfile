@@ -56,7 +56,7 @@ COPY . /app
 WORKDIR /app
 RUN mvn clean install
 ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
 COPY src/main/resources/birthdays.json /app/birthdays.json
 COPY src/main/resources/employees.json /app/employees.json
+COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
