@@ -51,12 +51,24 @@
 #ENTRYPOINT ["java", "-jar"]
 #CMD ["echo", "ls"]
 
-FROM maven:3.6.3-openjdk-11
+#FROM maven:3.6.3-openjdk-11
+#COPY . /app
+#WORKDIR /app
+#RUN mvn clean install
+#ARG JAR_FILE=target/*.jar
+#COPY src/main/resources/birthdays.json /app/birthdays.json
+#COPY src/main/resources/employees.json /app/employees.json
+#COPY ${JAR_FILE} app.jar
+#ENTRYPOINT ["java", "-jar", "app.jar"]
+
+
+FROM maven:3.8.4-openjdk-11 AS build
 COPY . /app
 WORKDIR /app
-RUN mvn clean install
-#ARG JAR_FILE=target/*.jar
+RUN mvn clean package -DskipTests
+FROM openjdk:11-jre-slim
+COPY --from=build /app/target/*.jar /app/app.jar
 COPY src/main/resources/birthdays.json /app/birthdays.json
 COPY src/main/resources/employees.json /app/employees.json
-COPY target/bago-backend-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+EXPOSE 8080
+CMD ["java", "-jar", "/app/app.jar"]
