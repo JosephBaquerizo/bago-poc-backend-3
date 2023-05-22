@@ -18,7 +18,6 @@ public class EmployeeService {
 
     public List<Employee> getEmployees() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        mapper = new ObjectMapper();
         File file = new File("src/main/resources/employees.json");
         Employee[] employees = mapper.readValue(file, Employee[].class);
         return Arrays.asList(employees);
