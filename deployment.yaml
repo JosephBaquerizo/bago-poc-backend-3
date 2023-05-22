@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bago-backend
+  name: bago-backend-2
   labels:
-    app: bago-backend
+    app: bago-backend-2
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: bago-backend
+      app: bago-backend-2
   template:
     metadata:
       labels:
-        app: bago-backend
+        app: bago-backend-2
     spec:
       containers:
-        - name: bago-backend
-          image: josanbaq7/bagobackend
+        - name: bago-backend-2
+          image: josanbaq7/bagobackend2
           ports:
             - containerPort: 8080
