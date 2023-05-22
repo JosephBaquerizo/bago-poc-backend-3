@@ -20,7 +20,7 @@ class RequestCounterTest {
     public void testIncrementRequestCount2() {
         RequestCounter requestCounter = new RequestCounter();
         requestCounter.incrementRequestCount();
-        assertEquals(1, requestCounter.getRequestCount());
+        assertEquals(1, 2);
     }
 
     @Test
