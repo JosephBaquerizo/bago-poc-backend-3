@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: bago-backend-2
-          image: josanbaq7/bagobackend2
+          image: josanbaq7/backbagoimage2
           ports:
             - containerPort: 9090

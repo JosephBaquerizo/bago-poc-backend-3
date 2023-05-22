@@ -7,7 +7,7 @@ pipeline {
     DEPLOY_CONTEXT = '/msBagoBackend/'
     PROJECT_VERSION = 'latest'
     docker = tool 'docker2'
-    dockerimagename = 'josanbaq7/backbagoimage:latest'
+    dockerimagename = 'josanbaq7/backbagoimage2:latest'
   }
   agent {
     kubernetes {
@@ -75,7 +75,7 @@ pipeline {
           sh 'chmod 0777 /var/run/docker.sock'
           sh 'docker logout'
           sh 'cd $HOME'
-          sh 'docker build . -t docker.io/josanbaq7/backbagoimage:latest --load'
+          sh 'docker build . -t docker.io/josanbaq7/backbagoimage2:latest --load'
         }
       }
     }
