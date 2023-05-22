@@ -16,4 +16,17 @@ class RequestCounterTest {
         assertEquals(2, requestCounter.getRequestCount());
     }
 
+    @Test
+    public void testIncrementRequestCount2() {
+        RequestCounter requestCounter = new RequestCounter();
+        requestCounter.incrementRequestCount();
+        assertEquals(1, requestCounter.getRequestCount());
+    }
+
+    @Test
+    public void testGetRequestCount() {
+        RequestCounter requestCounter = new RequestCounter();
+        assertEquals(0, requestCounter.getRequestCount());
+    }
+
 }
