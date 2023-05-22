@@ -8,3 +8,4 @@ spec:
   ports:
     - port: 3030
       targetPort: 9090
+  type: LoadBalancer
