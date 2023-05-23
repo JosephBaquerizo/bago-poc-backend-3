@@ -57,6 +57,7 @@ pipeline {
       '''
     }
   }
+  tools { maven 'Maven' }
   stages {
     stage('SonarQube Analysis') {
         steps {
@@ -69,6 +70,17 @@ pipeline {
             }
         }
     }
+    stage('Unit Tests') {
+          steps {
+            script {
+              //sh 'npm ci'
+              def testResult = sh(returnStatus: true, script: 'mvn test')
+              if (testResult != 0) {
+                error('Las pruebas unitarias fallaron. Se detendrá el pipeline.')
+              }
+            }
+          }
+        }
     stage('Build and publish docker image') {
       when { expression { true } }
       steps {
