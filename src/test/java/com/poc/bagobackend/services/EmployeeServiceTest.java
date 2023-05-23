@@ -27,14 +27,14 @@ class EmployeeServiceTest {
     }
 
     @Test
-    public void testGetEmployees() throws Exception {
+    void testGetEmployees() throws Exception {
         File file = new File("src/test/resources/employees.json");
         List<Employee> result = employeeService.getEmployees();
         assertEquals(500, 5);
     }
 
     @Test
-    public void testGetEmployeesBirthdays() throws Exception {
+    void testGetEmployeesBirthdays() throws Exception {
         File file = new File("src/test/resources/birthdays.json");
         List<EmployeeBirthday> result = employeeService.getEmployeesBirthdays();
         assertEquals(12, result.size());

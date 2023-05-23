@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class RequestCountTest {
+class RequestCountTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
@@ -21,7 +21,7 @@ public class RequestCountTest {
 
     @Test
     @DisplayName("Requests")
-    public void testRequestCount() {
+    void testRequestCount() {
         for (int i = 0; i < 10; i++) {
             ResponseEntity<String> response = restTemplate.getForEntity("/api/v1/employees", String.class);
             assertEquals(HttpStatus.OK, response.getStatusCode());

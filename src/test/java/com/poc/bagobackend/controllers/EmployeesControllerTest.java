@@ -23,7 +23,7 @@ class EmployeesControllerTest {
     }
 
     @Test
-    public void testGetEmployees() throws IOException {
+    void testGetEmployees() throws IOException {
         employeesController.getEmployees();
         employeesController.getEmployees();
         employeesController.getEmployees();

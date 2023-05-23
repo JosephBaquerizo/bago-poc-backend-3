@@ -9,7 +9,7 @@ class RequestCounterTest {
     private RequestCounter requestCounter;
 
     @Test
-    public void testIncrementRequestCount() {
+    void testIncrementRequestCount() {
         RequestCounter requestCounter = new RequestCounter();
         requestCounter.incrementRequestCount();
         requestCounter.incrementRequestCount();
@@ -17,14 +17,14 @@ class RequestCounterTest {
     }
 
     @Test
-    public void testIncrementRequestCount2() {
+    void testIncrementRequestCount2() {
         RequestCounter requestCounter = new RequestCounter();
         requestCounter.incrementRequestCount();
         assertEquals(1, requestCounter.getRequestCount());
     }
 
     @Test
-    public void testGetRequestCount() {
+    void testGetRequestCount() {
         RequestCounter requestCounter = new RequestCounter();
         assertEquals(0, requestCounter.getRequestCount());
     }
