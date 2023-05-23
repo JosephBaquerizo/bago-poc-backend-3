@@ -58,6 +58,14 @@ pipeline {
     }
   }
   stages {
+    stage('Maven Test') {
+        steps {
+            script {
+                def mvn = tool 'Maven';
+                sh 'mvn test'
+            }
+        }
+    }
     stage('SonarQube Analysis') {
         steps {
             script {
@@ -68,21 +76,6 @@ pipeline {
             }
         }
     }
-    stage('Maven Test') {
-        steps {
-            script {
-                def mvn = tool 'Maven';
-                sh 'mvn test'
-            }
-        }
-    }
-    //stage('Quality Gate') {
-    //    steps {
-    //        timeout(time: 2, unit: 'MINUTES') {
-    //            waitForQualityGate abortPipeline: true
-    //        }
-    //    }
-    //}
     stage('Build and publish docker image') {
       when { expression { true } }
       steps {
