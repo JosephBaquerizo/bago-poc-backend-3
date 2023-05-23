@@ -72,7 +72,7 @@ pipeline {
         steps {
             script {
                 def mvn = tool 'Maven';
-                sh 'mvn test'
+                sh '${mvn}/bin/mvn test'
             }
         }
     }
