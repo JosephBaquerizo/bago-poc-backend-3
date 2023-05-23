@@ -6,6 +6,8 @@ spec:
   selector:
     app: bago-backend-2
   ports:
-    - port: 3030
-      targetPort: 9090
-  type: LoadBalancer
+  - protocol: TCP
+    port: 3030
+    targetPort: 9090
+    nodePort: 30486
+  type: NodePort
