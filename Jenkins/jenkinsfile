@@ -68,6 +68,14 @@ pipeline {
             }
         }
     }
+    stage('Maven Test') {
+        steps {
+            script {
+                def mvn = tool 'Maven';
+                sh 'mvn test'
+            }
+        }
+    }
     //stage('Quality Gate') {
     //    steps {
     //        timeout(time: 2, unit: 'MINUTES') {

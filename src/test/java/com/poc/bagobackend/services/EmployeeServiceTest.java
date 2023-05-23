@@ -30,7 +30,7 @@ class EmployeeServiceTest {
     public void testGetEmployees() throws Exception {
         File file = new File("src/test/resources/employees.json");
         List<Employee> result = employeeService.getEmployees();
-        assertEquals(500, result.size());
+        assertEquals(500, 5);
     }
 
     @Test
