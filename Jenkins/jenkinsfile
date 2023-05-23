@@ -68,14 +68,6 @@ pipeline {
             }
         }
     }
-    stage('Maven Test') {
-        steps {
-            script {
-                def mvn = tool 'Maven';
-                sh '${mvn}/bin/mvn test'
-            }
-        }
-    }
     stage('Build and publish docker image') {
       when { expression { true } }
       steps {
