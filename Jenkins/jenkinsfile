@@ -64,23 +64,21 @@ pipeline {
             script {
                 def mvn = tool 'Maven';
                 withSonarQubeEnv('sonar-server-backend-bago') {
-                    //sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=bago-poc-backend-jenk -Dsonar.projectName='bago-poc-backend-jenk'"
                     sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=bago-poc-backend-2 -Dsonar.projectName='bago-poc-backend-2'"
                 }
             }
         }
     }
     stage('Unit Tests') {
-          steps {
-            script {
-              //sh 'npm ci'
-              def testResult = sh(returnStatus: true, script: 'mvn test')
-              if (testResult != 0) {
-                error('Las pruebas unitarias fallaron. Se detendrá el pipeline.')
-              }
-            }
+      steps {
+        script {
+          def testResult = sh(returnStatus: true, script: 'mvn test')
+          if (testResult != 0) {
+            error('Las pruebas unitarias fallaron. Se detendrá el pipeline.')
           }
         }
+      }
+    }
     stage('Build and publish docker image') {
       when { expression { true } }
       steps {
@@ -121,8 +119,6 @@ pipeline {
                     script {
                         try {
                             sh 'curl -LO https://dl.k8s.io/release/v1.25.1/bin/linux/amd64/kubectl && mv kubectl /bin/kubectl && chmod a+x /bin/kubectl && chmod 0777 /bin/kubectl'
-                            sh 'ls -la'
-                            sh 'kubectl get pods -n bagodev'
                             sh 'kubectl apply -f deployment.yaml -n bagodev'
                             sh 'kubectl apply -f service.yaml -n bagodev'
                         } catch (Exception e) {
