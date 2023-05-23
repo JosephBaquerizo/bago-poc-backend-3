@@ -6,8 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RequestCounterTest {
 
-    private RequestCounter requestCounter;
-
     @Test
     void testIncrementRequestCount() {
         RequestCounter requestCounter = new RequestCounter();
@@ -27,6 +25,20 @@ class RequestCounterTest {
     void testGetRequestCount() {
         RequestCounter requestCounter = new RequestCounter();
         assertEquals(0, requestCounter.getRequestCount());
+    }
+
+    @Test
+    void testIncrementRequestCount3() {
+        RequestCounter requestCounter = new RequestCounter();
+
+        requestCounter.incrementRequestCount();
+        long countAfterFirstIncrement = requestCounter.getRequestCount();
+        assertEquals(1, countAfterFirstIncrement);
+
+        requestCounter.incrementRequestCount();
+        long countAfterSecondIncrement = requestCounter.getRequestCount();
+        assertEquals(2, countAfterSecondIncrement);
+
     }
 
 }
