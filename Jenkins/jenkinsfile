@@ -58,14 +58,6 @@ pipeline {
     }
   }
   stages {
-    stage('Maven Test') {
-        steps {
-            script {
-                def mvn = tool 'Maven';
-                sh 'mvn test'
-            }
-        }
-    }
     stage('SonarQube Analysis') {
         steps {
             script {
@@ -73,6 +65,14 @@ pipeline {
                 withSonarQubeEnv('sonar-server-backend-bago') {
                     sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=bago-poc-backend-jenk -Dsonar.projectName='bago-poc-backend-jenk'"
                 }
+            }
+        }
+    }
+    stage('Maven Test') {
+        steps {
+            script {
+                def mvn = tool 'Maven';
+                sh 'mvn test'
             }
         }
     }
