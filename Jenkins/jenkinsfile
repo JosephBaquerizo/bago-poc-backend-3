@@ -38,7 +38,7 @@ pipeline {
             - cat
             tty: true
           - name: docker
-            image: docker:24.0.0-cli-alpine3.18
+            image: docker:20.10.18-cli-alpine3.16
             command:
             - cat
             tty: true
@@ -86,7 +86,7 @@ pipeline {
           sh 'chmod 0777 /var/run/docker.sock'
           sh 'docker logout'
           sh 'cd $HOME'
-          sh 'docker build . -t docker.io/josanbaq7/backbagoimage2:latest --load'
+          sh 'docker build . -t docker.io/josanbaq7/backbagoimage2:latest'
         }
       }
     }
